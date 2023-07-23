@@ -13,4 +13,4 @@ The current plan for upcoming articles:
 Hi, I am James, an undergraduate student studying in the University of British Columbia, Canada.  
 I am majoring in Physics, and I am interested in Computational Physics and Applications of Quantum Physics for Computing.
 
-Written in conjunction with the 2023 Womanium Global Projec.
+Written in conjunction with the 2023 Womanium Global Project.
