@@ -28,7 +28,19 @@ behave in a way where the particle can be in **more than one state at a time**,
 in the case of the experiment, the position state is the one in superposition.
 It also showed that these quantum states can be represented in the form of a wave (for continuous states).
 
-This wave state is called a *wavefunction*. It is usually written as $\ket{\Psi}$.
+The interference pattern that is seen in the experiment is analogous to the probability density function.
+Which is the square amplitude of what is called a *wavefunction*. 
+The state that the wavefunction (say $\Psi$) represents usually written as $\ket{\Psi}$
+($\Psi$ can depend on many things, such as time, position, etc.).
+
+To explain further, $\Psi$ is a property of the quantum system,
+and to find the probability density function $p$ associated with it,
+one could write:
+
+$$p = \braket{\Psi | \Psi} \equiv ~ \Psi^{*}\Psi $$
+
+Where $\Psi^{*}$ is the [complex conjugate](https://www.mathcentre.ac.uk/resources/sigma%20complex%20number%20leaflets/sigma-complex6-2009-1.pdf) of the wavefunction.
+
 The wavefunction contains all the information needed to describe the **full** state of a quantum system. 
 A quantum particle, for example, can contain both the momentum and the space information in the wavefunction.
 
