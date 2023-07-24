@@ -57,9 +57,15 @@ $$\ket{+} = \frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}$$
 
 $$\ket{-} = \frac{1}{\sqrt{2}} \ket{0} - \frac{1}{\sqrt{2}} \ket{1}$$
 
-![Empty Bloch sphere](https://www.sharetechnote.com/html/QC/image/QuantumComputing_BlochSphere_10.png)  
+Measuring these states would collapse the qubits into $\ket{0}$ or $\ket{1}$, with 0.5 probability for each.
+
+<p align="center" width="100%">
+    <img width="50%" src="https://www.sharetechnote.com/html/QC/image/QuantumComputing_BlochSphere_10.png">
+</p>
+
 The image above shows the axes and the corresponding states that they represent. 
 Image from *ShareTechNote* website.
+
 
 Operating on qubits requires the use of Quantum logic gates, which will be discussed in the next article.
 
