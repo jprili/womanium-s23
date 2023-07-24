@@ -57,7 +57,7 @@ $$\ket{+} = \frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}$$
 
 $$\ket{-} = \frac{1}{\sqrt{2}} \ket{0} - \frac{1}{\sqrt{2}} \ket{1}$$
 
-![Empty Bloch sphere](https://www.sharetechnote.com/html/QC/image/QuantumComputing_BlochSphere_10.png)
+![Empty Bloch sphere](https://www.sharetechnote.com/html/QC/image/QuantumComputing_BlochSphere_10.png)  
 The image above shows the axes and the corresponding states that they represent. 
 Image from *ShareTechNote* website.
 
