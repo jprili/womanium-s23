@@ -37,5 +37,29 @@ as in the other properties of the wavefunction will disappear and "reduce" to th
 This is due to the measurement process involving a particle interacting with the one measured.
 For example, in the double-slit experiment, the particles that pass through the slit interacts with the surface which collapses the wavefunction that it had prior.
 
-## Qubits
- 
+## Qubits  
+A Qubit can be thought of as a wavefunction in state $\ket{q}$:  
+Let $\ket{0} = \[1 ~ 0\]^{T}$, and $\ket{1} = \[0 ~ 1\]^{T}$;
+$$\ket{q} = \alpha \ket{0} + \beta \ket{1}$$
+where $|\alpha|^{2} + |\beta|^{2} = 1$ (normalisation),
+and $|\alpha| ^ {2}$ and $|\beta| ^ {2}$ are probabilities to find the qubit being in $\ket{0}$, $\ket{1}$ respectively.  
+The advantage this gives us over classical bits is that the qubit can store more information, with the difference being more noticeable with increasing bits/qubits.  
+
+From [Microsoft Azure](https://azure.microsoft.com/en-ca/resources/cloud-computing-dictionary/what-is-a-qubit/):
+
+> - The amount of information a qubit system can represent grows exponentially. Information that 500 qubits can easily represent would not be possible with even more than 2^500 classical bits.
+> -  It would take a classical computer millions of years to find the prime factors of a 2,048-bit number. Qubits could perform the calculation in just minutes.
+
+Qubits can also be geometrically represented as points on the surface of a sphere.
+The axes [represent different states](https://www.sharetechnote.com/html/QC/QuantumComputing_BlochSphere.html), such as:
+
+$$\ket{+} = \frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}$$  
+
+$$\ket{-} = \frac{1}{\sqrt{2}} \ket{0} - \frac{1}{\sqrt{2}} \ket{1}$$
+
+![Empty Bloch sphere](https://www.sharetechnote.com/html/QC/image/QuantumComputing_BlochSphere_10.png)
+The image above shows the axes and the corresponding states that they represent. 
+Image from *ShareTechNote* website.
+
+Operating on qubits requires the use of Quantum logic gates, which will be discussed in the next article.
+
