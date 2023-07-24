@@ -2,8 +2,10 @@
 This repository is to show to a global audience about the potential of quantum computing. 
 It will contain things that I find interesting each week from the Womanium lectures.
 
+Completed:
+  - [Qubits and Quantum Physics](https://github.com/jprili/womanium-s23/blob/main/src/intro.md)
+
 The current plan for upcoming articles:
-- Qubits and Quantum Physics
 - Introduction to Quantum Computing
   - Circuits, Logic Gates, and Reversible Computing
 - Quantum Communication
