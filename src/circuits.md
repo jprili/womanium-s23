@@ -3,7 +3,7 @@
 Now that we know what qubits are ([see previous article](https://github.com/jprili/womanium-s23/blob/main/src/intro.md)),
 let us now move on utilising qubits for computing.
 
-## Reversible Computing in QC systems
+## Reversible Computing in QC (Quantum Computing) systems
 Reversible computing is, to put simply,
 a method of computing that is able to get the input state from the output state.
 Take the classical AND gate. The truth table shows:
@@ -44,7 +44,7 @@ Since these are qubits, $\ket{1}$ and $\ket{0}$ are not the only states that the
 Like many classical computers, a significant amount of quantum computers (some use [annealing](https://quantumzeitgeist.com/differences-between-quantum-annealers-and-gate-based-quantum-computing/),
 mainly used for optimisation problems) use gates to carry out algorithms.
 These gates can be represented as rotations on the Bloch sphere, or unitary matrices operating on qubit states.
-Following are a few common quantum gates used.
+Following are a some common quantum gates used in QC.
 
 ### NOT ($X$, $\bigoplus$)
 The `NOT` gate is a $\pi$ radians rotation of the **current state** of the qubit.
@@ -73,10 +73,88 @@ and
 
 $$ \ket{1} \mapsto \ket{-} $$
 
+As a matrix, the Hadamard gate will be:
+
+```math
+H = \frac{1}{\sqrt{2}} 
+\begin{bmatrix}
+1 & 1 \\
+1 & -1
+\end{bmatrix}
+```
+It is analogous to a coin flip in terms of probabilities, but not the same.
+
 ### CNOT ($CX$)
-The controlled not gate, or `CNOT` is a `NOT` gate that activates when the control
-qubit has $\ket{1}$ in its state.
+The controlled not gate, or `CNOT` is a `NOT` gate that activates when the control qubit has $\ket{1}$ in its state.
+It operates on two qubits and could be extended to add more control qubits 
+(called Toffoli gates for two qubits, and multi-controlled `NOT` gates for more).
+
+```math
+X =
+
+\begin{bmatrix}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 1 \\
+0 & 0 & 1 & 0 
+\end{bmatrix}
+```
 
 To see a more detailed list on quantum gates, see [*Wikipedia*'s Quantum logic gate page](https://en.wikipedia.org/wiki/Quantum_logic_gate).
+
+## Constructing Circuits, Algorithms
+These gates are combined to give the desired behaviours for the qubits.
+An example of this is [Grover's Search Algorithm](https://quantum-computing.ibm.com/composer/docs/iqx/guide/grovers-algorithm),
+a search algorithm on an unstructured list, 
+which is in $O(\sqrt{N})$ instead of the classical solution which has $O(N)$.  
+
+There are a few ways to create a quantum circuit,
+IBM has [*Qiskit*](https://qiskit.org/), and Google has [*Cirq*](https://quantumai.google/cirq), 
+both decent python libraries for quantum computing.
+
+Let us create a simple multi-`OR` gate.
+In this case we will be using *Qiskit*.
+
+Here are the imports needed.
+```python
+from qiskit import QuantumRegister, ClassicalRegister, QuantumCircuit execute, Aer
+from qiskit.circuit.library import XGate
+```
+
+Here is how the circuit constructed.
+```python
+# initialise registers
+qreg_q = QuantumRegister(4, 'q')
+creg_c0 = ClassicalRegister(1, 'c0')
+
+# instantiate circuit object
+circuit = QuantumCircuit(qreg_q, creg_c0)
+
+# add NOT gates on first three qubits
+circuit.x(qreg_q[0])
+circuit.x(qreg_q[1])
+circuit.x(qreg_q[2])
+circuit.x(qreg_q[3])
+mcx = XGate().control(3)
+
+# last qreg_q is the target qubit
+circuit.append(mcx, qreg_q)
+
+circuit.measure(qreg_q[3], creg_c0[0])
+
+# these are added to revert the first three qubits back
+# to their original states
+circuit.x(qreg_q[0])
+circuit.x(qreg_q[1])
+circuit.x(qreg_q[2])
+```
+
+To check the circuit, we can add extra classical registers and measurements
+```python
+job = execute(circuit, Aer.get_backend('qasm_simulator'),shots=1000)
+counts = job.result().get_counts(circuit)
+```
+
+The circuit represents this probability graph
 
 
