@@ -4,10 +4,9 @@ It will contain things that I find interesting each week from the Womanium lectu
 
 Completed:
   - [Qubits and Quantum Physics](https://github.com/jprili/womanium-s23/blob/main/src/intro.md)
+  - [Circuits and Algorithms](https://github.com/jprili/womanium-s23/blob/main/src/circuits.md)
 
 The current plan for upcoming articles:
-- Introduction to Quantum Computing
-  - Circuits, Logic Gates, and Reversible Computing
 - Quantum Communication
   - Quantum Key Distribution
  
