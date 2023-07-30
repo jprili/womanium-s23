@@ -155,9 +155,13 @@ job = execute(circuit, Aer.get_backend('qasm_simulator'),shots=1000)
 counts = job.result().get_counts(circuit)
 ```
 
-The possible outcomes are shown below:  
-<img src="../res/probabilities.png" alt="Possible circuit outcomes" width=500 />
+The possible outcomes are shown below 
+(Hadamards are added to qubits 0, 1, 2 to show possibilities):  
+<img src="../res/probabilities.png" alt="Possible circuit outcomes" width=800 />  
+Notice that only `0000` has `0` on its most-significant bit 
+qbit 3, see [qiskit ordering](https://qiskit.org/documentation/tutorials/circuits/3_summary_of_quantum_operations.html)) and `1` everywhere else.
+We have succesfully created an `OR` gate for 3 input qubits.
 
 and would represent the following circuit:  
-<img src="../res/or3.png" alt="OR3 circuit" width=500 />
+<img src="../res/or3.png" alt="OR3 circuit" width=200 />
 
