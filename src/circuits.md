@@ -155,6 +155,9 @@ job = execute(circuit, Aer.get_backend('qasm_simulator'),shots=1000)
 counts = job.result().get_counts(circuit)
 ```
 
-The circuit represents this probability graph
+The possible outcomes are shown below:
+<img src="../res/probabilities.png" alt="Possible circuit outcomes" width=500 />
 
+and would represent the following circuit:
+<img src="../res/or3.png" alt="OR3 circuit" width=500 />
 
